@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://cro4g586kkpea"]
+
+[ext_resource type="Script" path="res://Scenes/level_5.gd" id="1_bqike"]
+[ext_resource type="Texture2D" uid="uid://lrogm1fxugvi" path="res://assets/jogo mapa op 2.png" id="2_jbee4"]
+[ext_resource type="PackedScene" uid="uid://x714f375f5xb" path="res://Scenes/bola.tscn" id="3_bwmsi"]
+[ext_resource type="PackedScene" uid="uid://d1krhwv6cwmg3" path="res://Scenes/player.tscn" id="4_qk23l"]
+[ext_resource type="PackedScene" uid="uid://b5moicvfcctor" path="res://Scenes/chave.tscn" id="5_gkjnp"]
+[ext_resource type="PackedScene" uid="uid://ngsp2w8gaoo2" path="res://Scenes/u_ijogo.tscn" id="6_4ch3h"]
+[ext_resource type="Texture2D" uid="uid://buetifugblpk5" path="res://assets/alvo-limpo_887141-11.png" id="7_4apuk"]
+[ext_resource type="Texture2D" uid="uid://cw6besfttdso4" path="res://assets/fechadura.png" id="8_1jd23"]
+[ext_resource type="AudioStream" uid="uid://cugfikwvnxpud" path="res://assets/WIN sound effect no copyright.mp3" id="9_6kv12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnf7w"]
+size = Vector2(1498.25, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnhgu"]
+size = Vector2(3.25, 943.813)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8gdb"]
+size = Vector2(101, 100.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdx7f"]
+size = Vector2(98.125, 74.5)
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_bqike")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(735, 434.75)
+scale = Vector2(1.06844, 1.16564)
+texture = ExtResource("2_jbee4")
+metadata/_edit_lock_ = true
+
+[node name="Bordas" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D"]
+position = Vector2(749, 4)
+shape = SubResource("RectangleShape2D_dnf7w")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D2"]
+position = Vector2(747.125, 898.5)
+shape = SubResource("RectangleShape2D_dnf7w")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D3"]
+position = Vector2(1.375, 121.094)
+shape = SubResource("RectangleShape2D_wnhgu")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D4"]
+position = Vector2(1499.25, 145.813)
+shape = SubResource("RectangleShape2D_wnhgu")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D5"]
+position = Vector2(744, 685)
+shape = SubResource("RectangleShape2D_dnf7w")
+metadata/_edit_lock_ = true
+
+[node name="Bola" parent="." instance=ExtResource("3_bwmsi")]
+
+[node name="Chave" parent="." instance=ExtResource("5_gkjnp")]
+
+[node name="UIjogo" parent="." instance=ExtResource("6_4ch3h")]
+
+[node name="Executar" type="Button" parent="UIjogo"]
+offset_left = 1003.0
+offset_top = 799.0
+offset_right = 1497.0
+offset_bottom = 894.0
+text = "ExecutarComandos"
+
+[node name="Alvo" type="Area2D" parent="."]
+position = Vector2(400, 200)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("7_4apuk")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_r8gdb")
+metadata/_edit_lock_ = true
+
+[node name="Alvo2" type="Area2D" parent="."]
+position = Vector2(500, 200)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo2"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("7_4apuk")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo2"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_r8gdb")
+metadata/_edit_lock_ = true
+
+[node name="Alvo3" type="Area2D" parent="."]
+position = Vector2(600, 200)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo3"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("7_4apuk")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo3"]
+light_mask = 7
+visibility_layer = 7
+shape = SubResource("RectangleShape2D_r8gdb")
+metadata/_edit_lock_ = true
+
+[node name="Fechadura" type="Area2D" parent="."]
+light_mask = 6
+visibility_layer = 6
+position = Vector2(400, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fechadura"]
+scale = Vector2(0.349379, 0.295732)
+texture = ExtResource("8_1jd23")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fechadura"]
+shape = SubResource("RectangleShape2D_gdx7f")
+metadata/_edit_lock_ = true
+
+[node name="Fechadura2" type="Area2D" parent="."]
+light_mask = 6
+visibility_layer = 6
+position = Vector2(500, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fechadura2"]
+scale = Vector2(0.349379, 0.295732)
+texture = ExtResource("8_1jd23")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fechadura2"]
+shape = SubResource("RectangleShape2D_gdx7f")
+metadata/_edit_lock_ = true
+
+[node name="Fechadura3" type="Area2D" parent="."]
+light_mask = 6
+visibility_layer = 6
+position = Vector2(600, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fechadura3"]
+scale = Vector2(0.349379, 0.295732)
+texture = ExtResource("8_1jd23")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fechadura3"]
+shape = SubResource("RectangleShape2D_gdx7f")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("4_qk23l")]
+
+[node name="Vitoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6kv12")
+
+[connection signal="pressed" from="UIjogo/Executar" to="." method="_on_executar_pressed"]

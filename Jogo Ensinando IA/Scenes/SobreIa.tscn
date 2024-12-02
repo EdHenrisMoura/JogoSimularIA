@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7rhqq1cqqjrn"]
+
+[ext_resource type="Script" path="res://Scenes/SobreIa.gd" id="1_x1xgq"]
+[ext_resource type="Texture2D" uid="uid://dr351jexyveot" path="res://assets/A_minimalistic_AI-themed_game_interface_in_dark_mo_converted.png" id="2_d222s"]
+
+[node name="SobreIa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x1xgq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d222s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Botoes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BotInfo" type="VBoxContainer" parent="Botoes"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 236.0
+offset_right = 1363.0
+offset_bottom = 870.0
+theme_override_constants/separation = 5
+metadata/_edit_lock_ = true
+
+[node name="TreiSup" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "1. Treinamento supervisionado
+"
+
+[node name="Map" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "2. Mapeamento
+"
+
+[node name="PlanSeq" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "3. Planejamento sequencial
+"
+
+[node name="Classi" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "4. Classificação
+"
+
+[node name="CondBul" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "5. Condicionais e lógica booleana
+"
+
+[node name="DetdO" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "6. Detecção de obstáculos e navegação autônoma
+"
+
+[node name="LacRep" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "7. Laços de repetição
+"
+
+[node name="Agrup" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "8. Agrupamento (Clustering)
+"
+
+[node name="TomDeci" type="Button" parent="Botoes/BotInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "9. Tomada de decisão baseada em IA
+"

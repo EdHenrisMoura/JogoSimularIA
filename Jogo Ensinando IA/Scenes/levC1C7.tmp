@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://d247ftvmcabxc"]
+
+[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_3ojkc"]
+[ext_resource type="Texture2D" uid="uid://lrogm1fxugvi" path="res://assets/jogo mapa op 2.png" id="1_x1rto"]
+[ext_resource type="PackedScene" uid="uid://d1krhwv6cwmg3" path="res://Scenes/player.tscn" id="2_vuduq"]
+[ext_resource type="PackedScene" uid="uid://x714f375f5xb" path="res://Scenes/bola.tscn" id="3_x8ew7"]
+[ext_resource type="PackedScene" uid="uid://ngsp2w8gaoo2" path="res://Scenes/u_ijogo.tscn" id="5_afvhw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qxgj"]
+size = Vector2(1498.25, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r430t"]
+size = Vector2(3.25, 943.813)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_3ojkc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(735, 434.75)
+scale = Vector2(1.06844, 1.16564)
+texture = ExtResource("1_x1rto")
+metadata/_edit_lock_ = true
+
+[node name="Bordas" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D"]
+position = Vector2(749, 4)
+shape = SubResource("RectangleShape2D_7qxgj")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D2"]
+position = Vector2(747.125, 898.5)
+shape = SubResource("RectangleShape2D_7qxgj")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D3"]
+position = Vector2(1.375, 121.094)
+shape = SubResource("RectangleShape2D_r430t")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D4"]
+position = Vector2(1499.25, 145.813)
+shape = SubResource("RectangleShape2D_r430t")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D5"]
+position = Vector2(744, 685)
+shape = SubResource("RectangleShape2D_7qxgj")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_vuduq")]
+
+[node name="Bola" parent="." instance=ExtResource("3_x8ew7")]
+
+[node name="UIjogo" parent="." instance=ExtResource("5_afvhw")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.811
+
+[connection signal="area_entered" from="Bola" to="." method="_on_bola_area_entered"]

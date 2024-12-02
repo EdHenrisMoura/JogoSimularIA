@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0lvr25o315lr"]
+
+[ext_resource type="Script" path="res://Scenes/teste.gd" id="1_pixnk"]
+[ext_resource type="PackedScene" uid="uid://x714f375f5xb" path="res://Scenes/bola.tscn" id="2_8i7lp"]
+[ext_resource type="PackedScene" uid="uid://d1krhwv6cwmg3" path="res://Scenes/player.tscn" id="3_s76bl"]
+[ext_resource type="PackedScene" uid="uid://ngsp2w8gaoo2" path="res://Scenes/u_ijogo.tscn" id="4_46y6d"]
+[ext_resource type="Texture2D" uid="uid://lrogm1fxugvi" path="res://assets/jogo mapa op 2.png" id="5_fwpt1"]
+[ext_resource type="Texture2D" uid="uid://buetifugblpk5" path="res://assets/alvo-limpo_887141-11.png" id="6_2jack"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp6n6"]
+size = Vector2(1498.25, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i82j1"]
+size = Vector2(3.25, 943.813)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xrxc"]
+size = Vector2(176, 147)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pixnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(735, 434.75)
+scale = Vector2(1.06844, 1.16564)
+texture = ExtResource("5_fwpt1")
+metadata/_edit_lock_ = true
+
+[node name="Bordas" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D"]
+position = Vector2(749, 4)
+shape = SubResource("RectangleShape2D_fp6n6")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D2"]
+position = Vector2(747.125, 898.5)
+shape = SubResource("RectangleShape2D_fp6n6")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D3"]
+position = Vector2(1.375, 121.094)
+shape = SubResource("RectangleShape2D_i82j1")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D4"]
+position = Vector2(1499.25, 145.813)
+shape = SubResource("RectangleShape2D_i82j1")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D5"]
+position = Vector2(744, 685)
+shape = SubResource("RectangleShape2D_fp6n6")
+metadata/_edit_lock_ = true
+
+[node name="Bola" parent="." instance=ExtResource("2_8i7lp")]
+
+[node name="Player" parent="." instance=ExtResource("3_s76bl")]
+
+[node name="UIjogo" parent="." instance=ExtResource("4_46y6d")]
+
+[node name="Alvo" type="Area2D" parent="."]
+position = Vector2(587, 359)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("6_2jack")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_2xrxc")
+metadata/_edit_lock_ = true

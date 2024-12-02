@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1krhwv6cwmg3"]
+
+[ext_resource type="Texture2D" uid="uid://bwngi3tf5t7th" path="res://assets/robozinho maneiro 2.png" id="1_2qekc"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_akqae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsgys"]
+size = Vector2(75.5, 115)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_akqae")
+speed = null
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_2qekc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 1.5)
+shape = SubResource("RectangleShape2D_bsgys")

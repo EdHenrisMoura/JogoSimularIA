@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bb65rinpn7hff"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="LabelEsquerdo" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 22.0
+offset_right = 760.0
+offset_bottom = 102.0
+
+[node name="LabelDireito" type="Label" parent="."]
+offset_left = 750.0
+offset_top = 13.0
+offset_right = 1496.0
+offset_bottom = 93.0
+
+[node name="CaixaEsquerda" type="VBoxContainer" parent="."]
+offset_left = 6.0
+offset_top = 695.0
+offset_right = 488.0
+offset_bottom = 891.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CaixaEsquerda"]
+layout_mode = 2
+
+[node name="CaixaMeio" type="VBoxContainer" parent="."]
+offset_left = 488.0
+offset_top = 695.0
+offset_right = 1000.0
+offset_bottom = 891.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CaixaMeio"]
+layout_mode = 2
+
+[node name="CaixaDireita" type="VBoxContainer" parent="."]
+offset_left = 1006.0
+offset_top = 693.0
+offset_right = 1492.0
+offset_bottom = 889.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CaixaDireita"]
+layout_mode = 2
