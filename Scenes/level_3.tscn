@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0l2in4qgbxjp"]
+
+[ext_resource type="Script" path="res://Level3.gd" id="1_30cnh"]
+[ext_resource type="Texture2D" uid="uid://lrogm1fxugvi" path="res://assets/jogo mapa op 2.png" id="2_c23nk"]
+[ext_resource type="Texture2D" uid="uid://buetifugblpk5" path="res://assets/alvo-limpo_887141-11.png" id="3_tq1kt"]
+[ext_resource type="PackedScene" uid="uid://x714f375f5xb" path="res://Scenes/bola.tscn" id="4_q5na2"]
+[ext_resource type="PackedScene" uid="uid://ngsp2w8gaoo2" path="res://Scenes/u_ijogo.tscn" id="5_x53jn"]
+[ext_resource type="PackedScene" uid="uid://d1krhwv6cwmg3" path="res://Scenes/player.tscn" id="6_6qy8o"]
+[ext_resource type="AudioStream" uid="uid://cugfikwvnxpud" path="res://assets/WIN sound effect no copyright.mp3" id="7_nmaap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi0rs"]
+size = Vector2(1498.25, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js0aa"]
+size = Vector2(3.25, 943.813)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iiqe"]
+size = Vector2(176, 147)
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_30cnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(735, 434.75)
+scale = Vector2(1.06844, 1.16564)
+texture = ExtResource("2_c23nk")
+metadata/_edit_lock_ = true
+
+[node name="Bordas" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D"]
+position = Vector2(749, 4)
+shape = SubResource("RectangleShape2D_wi0rs")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D2"]
+position = Vector2(747.125, 898.5)
+shape = SubResource("RectangleShape2D_wi0rs")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D3"]
+position = Vector2(1.375, 121.094)
+shape = SubResource("RectangleShape2D_js0aa")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bordas"]
+position = Vector2(-2, 303)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D4"]
+position = Vector2(1499.25, 145.813)
+shape = SubResource("RectangleShape2D_js0aa")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Bordas"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordas/StaticBody2D5"]
+position = Vector2(744, 685)
+shape = SubResource("RectangleShape2D_wi0rs")
+metadata/_edit_lock_ = true
+
+[node name="Bola" parent="." instance=ExtResource("4_q5na2")]
+
+[node name="Alvo" type="Area2D" parent="."]
+position = Vector2(606, 399)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("3_tq1kt")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_0iiqe")
+metadata/_edit_lock_ = true
+
+[node name="Alvo2" type="Area2D" parent="."]
+position = Vector2(348, 270)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo2"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("3_tq1kt")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo2"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_0iiqe")
+metadata/_edit_lock_ = true
+
+[node name="Alvo3" type="Area2D" parent="."]
+position = Vector2(330, 543)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Alvo3"]
+scale = Vector2(0.341304, 0.247942)
+texture = ExtResource("3_tq1kt")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alvo3"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_0iiqe")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("6_6qy8o")]
+
+[node name="UIjogo" parent="." instance=ExtResource("5_x53jn")]
+
+[node name="Executar" type="Button" parent="UIjogo"]
+offset_left = 1003.0
+offset_top = 799.0
+offset_right = 1497.0
+offset_bottom = 894.0
+text = "ExecutarComandos"
+
+[node name="Vitoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nmaap")
+
+[connection signal="body_entered" from="Bola" to="." method="_on_bola_area_entered"]
+[connection signal="body_entered" from="Alvo" to="." method="_on_alvo_body_entered"]
+[connection signal="body_entered" from="Alvo2" to="." method="_on_alvo_2_body_entered"]
+[connection signal="body_entered" from="Alvo3" to="." method="_on_alvo_3_body_entered"]

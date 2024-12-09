@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cugfikwvnxpud"
+path="res://.godot/imported/WIN sound effect no copyright.mp3-17f178c2347038ed7e3e67fcf70d6a05.mp3str"
+
+[deps]
+
+source_file="res://assets/WIN sound effect no copyright.mp3"
+dest_files=["res://.godot/imported/WIN sound effect no copyright.mp3-17f178c2347038ed7e3e67fcf70d6a05.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
